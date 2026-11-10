@@ -33,7 +33,7 @@ C++ · CUDA · TensorRT · YOLO11-pose · FFmpeg · OpenCV · Redis · PostgreSQ
 
 The YOLO layer for TensorRT comes from [tensorrtx](https://github.com/wang-xinyu/tensorrtx) (MIT License).
 
-Build steps and what I learned along the way are in [BUILD_NOTES.md](BUILD_NOTES.md).
+Build steps are in [BUILD_NOTES.md](BUILD_NOTES.md).
 
 ## My other projects
 
