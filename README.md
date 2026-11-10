@@ -1,4 +1,4 @@
-# People-Flow Analysis from Live Camera Video
+# People Tracking and Counting from Live Camera Video
 
 By Zichun Ai, MSc Internet of Things with AI, University of Bristol
 

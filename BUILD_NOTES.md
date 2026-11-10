@@ -39,11 +39,11 @@ powershell -ExecutionPolicy Bypass -File .\scripts\test_all.ps1
 
 ## How I built it
 
-I started from a bigger vision project and cut it down to one model (YOLO11n-pose), one kind of analysis (people flow) and a small desktop app, then built the rest up one step at a time.
+I started from a bigger vision project and cut it down to one model (YOLO11n-pose), one kind of analysis (tracking and counting people) and a small desktop app, then built the rest up one step at a time.
 
 1. First I froze the baseline and the design so I had a fixed place to start from.
 2. Then I got each camera decoding just once with FFmpeg and passing the frames to every job that needs them.
-3. I moved the existing people-flow analysis onto that shared reader.
+3. I moved the existing people tracking and counting onto that shared reader.
 4. After that I made one worker process able to run all the different jobs.
 5. Next I added task storage, commands through Redis and a job that saves JPEG frames and clears out old ones.
 6. Then came an HTTP API with token login and diagnostics, and a web page for managing cameras.
