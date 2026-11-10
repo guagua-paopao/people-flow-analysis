@@ -50,10 +50,3 @@ I started from a larger vision project and cut it down to one complete pipeline:
 7. **Keeping it running.** Monitoring, recovery from failures, storage limits, and backup and restore.
 8. **Stable camera IDs and PostgreSQL.** Each camera got a permanent ID, and the data moved from SQLite to PostgreSQL.
 
-## What I learned
-
-- **Decide what should fail together.** If a camera drops, every job on that camera is affected, because they share one video reader. A disk or encoding problem only stops the job that hit it.
-- **Keep secrets out of everything.** Camera addresses and passwords live only in environment variables, never in config files, Redis messages, HTTP requests or Git.
-- **Test against the real database.** The first run on a real PostgreSQL 17 database exposed bugs in SQL that already existed: an ambiguous column name and a parameter whose type it could not work out.
-- **One counter should mean one thing.** A test failed because `sampled_frames` counted both saved pictures and frames sent for analysis, so the number was misleading. It now counts saved pictures only.
-- **GPU model files are tied to the setup.** A TensorRT engine depends on the GPU and the TensorRT version, so a model that runs on my laptop may need exporting again elsewhere.
