@@ -2,30 +2,30 @@
 
 By Zichun Ai, MSc Internet of Things with AI, University of Bristol
 
-This system watches a live camera feed, finds and follows people, counts how many cross a line, and raises an alert when someone enters a restricted area or shows a risky pose such as a fall.
+You point this at a live camera and it finds people, follows them, counts how many cross a line, and warns you if someone walks into a restricted area or does something risky like falling over.
 
-It is a smaller, standalone version of the kind of system I worked on during my machine-vision internship (May–Aug 2026).
+It's a smaller, standalone version of the kind of system I worked on during my machine-vision internship (May–Aug 2026).
 
 ## What it can do
 
-- **Find people**, along with 17 body points such as shoulders, knees and ankles
-- **Follow each person** with a stable ID and draw their path
-- **Count** who crosses a line, and in which direction
-- **Watch an area** and notice when someone enters, stays or leaves
-- **Spot simple poses**: hands up, crouching, falling, running and loitering
-- **Show the results** in a desktop app, with a small web page for managing cameras
+- It finds people and 17 points on their body, like shoulders, knees and ankles.
+- It keeps the same ID on each person and draws the path they walked.
+- It counts who crosses a line and which way they went.
+- It can watch an area and notice when someone goes in, stays or leaves.
+- It picks up simple poses like hands up, crouching, falling, running and loitering.
+- You can see the results in a desktop app, and there's a small web page for managing cameras.
 
 ## What I like about it
 
-One camera feed often has to serve several jobs at once, such as running the AI model and saving pictures. Here the video is decoded only once and shared by all of them. If one job is slow or fails, the others keep going.
+One camera feed often has to do several jobs at once, like running the AI model and saving pictures, so I decode the video once and let all the jobs share it. If one job gets slow or fails, the others just carry on.
 
-- It has been run end to end on a real 1080p camera.
-- Automated tests cover situations like a job failing, a slow job, or the video dropping and coming back.
-- Camera passwords stay out of the config files and code, and a scan of the program's logs found none.
+- I've run the whole thing on a real 1080p camera.
+- The automated tests cover things like a job failing, a job running slow, and the video dropping and coming back.
+- Camera passwords never go in the config files or code, and when I scanned the program's logs there were none in there either.
 
 ## Good to know
 
-This is a learning and demo project. I haven't yet measured how accurate the tracking and counting are on labelled video.
+This is a learning and demo project, and I haven't measured how accurate the tracking and counting are on labelled video yet.
 
 ## Built with
 
